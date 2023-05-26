@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:work/controller/barcode_controller/barcode_controller.dart';
 
+import '../mobile_scanner_view.dart';
+
 Widget barcodeScan(BuildContext context) {
   BarcodeController barcodeController = Get.find();
   return Stack(
@@ -20,14 +22,7 @@ Widget barcodeScan(BuildContext context) {
             barcodeController.getBarcode(capture);
             final Uint8List? image = capture.image;
             if (image != null) {
-              showDialog(
-                context: context,
-                builder: (context) => Image(image: MemoryImage(image)),
-              );
-              Future.delayed(const Duration(seconds: 2), () {
-                Navigator.pop(context);
-                Get.back();
-              });
+              Get.back();
             }
           },
         ),
