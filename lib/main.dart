@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Work',
-      initialRoute: AppRoutes.reservation,
+      initialRoute: AppRoutes.home,
       getPages: routes(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
